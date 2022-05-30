@@ -88,6 +88,9 @@ module.exports = {
         // 压缩css
         new CssMinimizerPlugin(),
     ],
+    experiments: {
+        topLevelAwait: true
+    },
     // 模式
     mode: "production"
 }

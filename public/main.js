@@ -1,7 +1,9 @@
 import './css/index.css'
-import './css/sec-top/header.css'
-import './css/sec-top/main.css'
-import './css/sec-tom/tom.css'
-import './css/sec-hous/hous.css'
+import './css/header.css'
+import './css/sec-city.css'
 
-import './js/sec-top'
+
+import './js/sec-city'
+
+// appid：95421747
+// appsecret：A7JdBTES 
