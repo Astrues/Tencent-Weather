@@ -3,7 +3,6 @@ import { res } from './myFuc'
 (function () {
     const header = document.querySelector("#root .main header");
     const bgs = document.querySelectorAll("#root .main header .bg .layer");
-    console.log(bgs[0].style);
     const hous = new Date().getHours();
     console.log(hous);
     if (hous >= 6 && hous <= 18) {
