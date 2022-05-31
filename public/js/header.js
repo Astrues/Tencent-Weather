@@ -15,8 +15,7 @@ import { res } from './myFuc'
 
 // 调用接口修改头部的数据
 (async function () {
-    const data = await (await res('/day?appid=95421747&appsecret=A7JdBTES&unescape=1')).data
-    console.log(data);
+    const data = (await res('/day?appid=95421747&appsecret=A7JdBTES&unescape=1')).data
     const header = document.querySelector("#root .main header");
     header.querySelector(".top .location").innerHTML = `<span></span> ${data.city}`
     header.querySelector(".middle .c").innerHTML = `${data.tem}°`

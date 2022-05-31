@@ -8,6 +8,4 @@ import './css/sec-chart.css'
 import './js/header'
 import './js/sec-city'
 import './js/sec-hous'
-
-// appid：95421747
-// appsecret：A7JdBTES 
+import './js/nearby'

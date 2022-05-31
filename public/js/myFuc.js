@@ -1,5 +1,4 @@
 const axios = require("axios").default;
-const xhr = new XMLHttpRequest();
 // 通过 axios 调用接口函数
 function res(api) {
     let data = axios({
@@ -8,4 +7,12 @@ function res(api) {
     })
     return data;
 }
-export { res }
+// 补零函数
+function time(t) {
+    if (t < 10) {
+        console.log(1);
+        t = '0' + t;
+    }
+    return t;
+}
+export { res, time }
