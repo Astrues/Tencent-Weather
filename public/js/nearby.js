@@ -12,5 +12,4 @@ const axios = require("axios").default;
         }
         ning[i].querySelectorAll("div")[1].querySelectorAll("p")[0].innerHTML = tq;
     }
-    console.log(data);
 })();

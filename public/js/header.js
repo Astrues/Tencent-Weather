@@ -4,7 +4,6 @@ import { res } from './myFuc'
     const header = document.querySelector("#root .main header");
     const bgs = document.querySelectorAll("#root .main header .bg .layer");
     const hous = new Date().getHours();
-    console.log(hous);
     if (hous >= 6 && hous <= 18) {
         header.style.background = "linear-gradient(45deg,#3bbcff,#4af4ff)"
         bgs[0].style.backgroundImage = "url('../images/bg01.png')"

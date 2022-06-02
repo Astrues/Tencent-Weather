@@ -1,3 +1,4 @@
+const axios = require("axios").default;
 // 地区选择与隐藏
 (function () {
     const location = document.querySelector("#root .main header .top .location");
@@ -20,20 +21,16 @@
     for (let i = 0; i < cityLis.length; i++) {
         cityLis[i].addEventListener("click", () => {
             // 点击后将城市存储到localStorage里面
-            let key = new Date().valueOf();
             let value = cityLis[i].textContent;
             // 点谁谁放第一个然后直接Set去重
             cityArr.unshift(value)
             const newArr = Array.from(new Set(cityArr));
-            for (let i = 0; i < newArr.length; i++) {
-                localStorage.setItem(i, newArr[i])
-            }
+            let key = new Date().valueOf();
+            localStorage.setItem(key, newArr[0])
             cityList.innerHTML = '';
             for (let i = 0; i < localStorage.length; i++) {
                 let li = document.createElement('li');
-                let key = localStorage.key(i);
-                let value = localStorage.getItem(key)
-                li.innerHTML = value;
+                li.innerHTML = newArr[i];
                 cityList.appendChild(li);
             }
             // 点击后修改主界面的城市,隐藏选择界面
@@ -45,16 +42,14 @@
             if (e.code == 'Enter') {
                 let value = input.value;
                 cityArr.unshift(value)
+                input.value = '';
                 newArr = Array.from(new Set(cityArr));
-                for (let i = 0; i < newArr.length; i++) {
-                    localStorage.setItem(i, newArr[i])
-                }
+                let key = new Date().valueOf();
+                localStorage.setItem(key, newArr[0])
                 cityList.innerHTML = '';
                 for (let i = 0; i < localStorage.length; i++) {
                     let li = document.createElement('li');
-                    let key = localStorage.key(i);
-                    let value = localStorage.getItem(key)
-                    li.innerHTML = value;
+                    li.innerHTML = newArr[i];
                     cityList.appendChild(li);
                 }
                 // 点击后修改主界面的城市,隐藏选择界面
@@ -75,10 +70,8 @@
     }
     // 点击小爱心删除数据
     clear.addEventListener("click", () => {
-        for (let i = 0; i < localStorage.length; i++) {
-            let key = localStorage.key(i);
-            localStorage.removeItem(key)
-        }
+        localStorage.clear();
         cityList.innerHTML = '';
     })
 })();
+

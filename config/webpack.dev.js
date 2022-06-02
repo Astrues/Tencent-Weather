@@ -57,7 +57,7 @@ module.exports = {
             // 新的文件内容与源文件一致,且会自动引入打包资源
             template: path.resolve(__dirname, '../public/index.html'),
             // 导入ico文件
-            favicon: (__dirname, './public/favicon.ico')
+             favicon: (__dirname, './public/favicon.ico')
         })
     ],
     // 开发服务器
@@ -70,5 +70,6 @@ module.exports = {
         topLevelAwait: true
     },
     // 模式
-    mode: "production"
+    mode: "development",
+    devtool:'cheap-module-source-map'
 }
