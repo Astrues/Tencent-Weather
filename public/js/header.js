@@ -9,6 +9,7 @@ import { res } from './myFuc'
         bgs[0].style.backgroundImage = "url('../images/bg01.png')"
         bgs[1].style.backgroundImage = "url('../images/bg02.png')"
         bgs[2].style.backgroundImage = "url('../images/bg03.png')"
+        
     }
 })();
 
